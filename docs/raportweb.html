@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+
+<body>
+<h3>1. Introducere</h3>
+<hr>
+<h4>1.1 Scop</h4>
+<p>
+Scopul este de a crea o aplicatie ce ofera utilizatorilor un tool de vizualizare multi-criteriala a datelor despre diverse spatii auto 
+de parcare. Aplicatia va oferi totodata si suport pentru procesare statistica a datelor la nivel de back-end si le va transmite 
+utilizatorilor in functie de preferintele acestora.
+</p>
+<h4>1.2 Conventii de Document</h4>
+<p>
+In cadrul acestui document am utilizat tagul h3 pentru titlurile capitolelor,h4 pentru titlurile subcapitolelor,p pentru paragrafele text si hr pentru delimitari. 
+</p>
+<h4>1.3 Publicul vizat și sugestii de lectură</h4>
+<p>
+Aceasta aplicatie se adreseaza pesoanelor care doresc sa obtina informatii si date procesate statistic despre parcuri auto.
+</p>
+<h4>1.4 Scopul produsului</h4>
+<p>
+Aplicatia dezolvata are rolul de a oferi informatii generoase despre parcurile auto din Romania si date statistice care pot ajuta utilizatorii
+sa-si formeze o imagine asupra anumitor astfel de parcuri care le-ar putea crea conditii favorabile. 
+</p>
+<h4>1.5 Referinte</h4>
+<p>
+<ol>
+    <li>https://github.com/rick4470/IEEE-SRS-Tempate#11-purpose</li>
+    <li>https://w3c.github.io/scholarly-html/</li>
+    <li>https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html</li>
+
+</ol>
+</p>
+<h3>2. Descriere Generala</h3>
+<hr>
+<h4>2.1 Perspectiva produsului</h4>
+<p>
+Produsul reprezinta un proiect realizat de doi studenti de la Facultatea de Informatica din cadrul UAIC.
+</p>
+<h4>2.2 Functiile produsului</h4>
+<p>
+Produsul ofera reprezentari grafice si rezultate procesate statistic despre date stocate in baza de date a aplicatiei despre parcurile auto
+din Romania, informatii despre realizarea aplicatiei,date de contact catre administratorii aplicatiei,si date despre aplicatia in sine.
+</p>
+<h4>2.3 Clase de utilizatori si caracteristici</h4>
+<p>
+Majoritatea utilizatorilor care utilizeaza aplicatia sunt in principal cei care au permis de conducere, manageri de parcuri auto sau arhitecti.
+</p>
+<h4>2.4 Mediul de operare</h4>
+<p>
+Aplicatia prezinta o arhitectura eterogena din punctul de vedere al SO-ului utilizat de utilizatori.
+</p>
+<h4>2.5 Constrangeri de Design si Implementare</h4>
+<p>
+Aplicatia se bazeaza pe gestionare unei baza de date despre parcurile auto. Acest lucru inseamna ca un nivel crescut de informatii
+va spori considerabil "delay-ul" informatiilor ce trebuie obtinute de la serverul aplicatiei. 
+</p>
+<h4>2.6 Documentația utilizatorului</h4>
+<p>
+Aplicatia pune la dispozitie o pagina dedicata problemelor legate de difunctionalitati ale aplicatie vizavi de utilizatorii sai, pe care acestia
+o pot folosi pentru a contacta administratorii aplicatiei pentru problemele pe care le confrunta.
+</p>
+<h4>2.7 Ipoteze și dependențe</h4>
+<p>
+Aplicatia s-ar putea sa nu sincronizeze la timpul dorit cererile numeroase ale clientilor pentru a le putea oferi datele dorite. Astfel legaturile
+dintre serverul de baze de date,PHP, si Python trebuie sa fie pe deplin constiente de acest lucru.
+</p>
+<h4>2.7 Ipoteze și dependențe</h4>
+<p>
+Aplicatia s-ar putea sa nu sincronizeze la timpul dorit cererile numeroase ale clientilor pentru a le putea oferi datele dorite. Astfel legaturile
+dintre serverul de baze de date,PHP, si Python trebuie sa fie pe deplin constiente de acest lucru.
+</p>
+<h3>3. Cerinte de interfata externa</h3>
+<hr>
+<h4>3.1 Ipoteze și dependențe</h4>
+<p>
+Aplicatia ofera o pagina de start cu un buton care trimite utilizatorul la pagina principala a aplicatiei. Bara de navigare este plasata in partea
+stanga pentru fiecare pagina a aplicatiei. Fiecare pagina Web este accesibila din aceasta.Si in fiecare pagina Web se or gasi informatiile dorite. 
+</p>
+<h4>3.2 Interfete Hardware</h4>
+<p>
+Utilizator va putea utiliza periferice(ex. mouse-ul) pentru a folosi aplicatia.Aplicatia accepta dispozitive eterogene pentru a o folosi.
+</p>
+<h4>3.3 Interfete Software</h4>
+<p>
+Utilizatorul va putea vizualiza datele primite de la server codificare prin Unicode(UTF-8) folosind HTML,CSS si Javascript pentru formatare,
+stilizare si functionalitati oferite la nivel de fron-end, datele urmeaza a fi receptionate la nivel de server intr-un script .php pentru
+a fi analizate cererile acestuia. Ulterior se va face o cerere la baza de date conectata(Oracle), unde vor fi procesate anumite informatii
+si transmise catre .php, care,dupa caz, le va trimite catre un script .py unde se va realiza procesarea statistica a datelor si le va transmite inapoi
+si dupa direct la utilizator.
+</p>
+<h4>3.4 Interfete de Comunicare</h4>
+<p>
+Aplicatia utilizeaza protocolul UTF-8 sau UTF-16 pentru codificarea Unicode, TCP/IP protocol pentru protocolul de internet la nivel de browser,
+si pentru transmiterea informatiilor la nivel de server intre script-uri.
+</p>
+<h4>3.4 Interfete de Comunicare</h4>
+<p>
+Aplicatia utilizeaza protocolul UTF-8 sau UTF-16 pentru codificarea Unicode, TCP/IP protocol pentru protocolul de internet la nivel de browser,
+si pentru transmiterea informatiilor la nivel de server intre script-uri.
+</p>
+<h3>4. Caracteristicile sistemului</h3>
+<hr>
+<p>
+    Aplicatia este organizata in documente .html,.css,.js pentru partea de front-end si .php,.py,.sql pentru partea de back-end.
+    </p>
+    <h4>4.1 Caracteristicile sistemului de procesare statistica</h4>
+<p>
+Aplicatia utilizeaza in acest sens un script in Python care va procesa statistic datele primite de la baza de date a acesteia, folosind functiile
+predefinite oferite de acest mediu. 
+</p>
+<h4>4.2 Caracteristicile sistemului de analiza a datelor de la utilizator</h4>
+<p>
+Aplicatia utilizeaza in acest sens un script in Php care analizeaza cererile transmise de utilizatori sub forma de stringuri si le pharse-aza
+pentru a analiza cererile mai departe.
+</p>
+<h3>5. Alte cerinte non-functionale</h3>
+<hr>
+<h4>5.1 Cereri de performanta</h4>
+<p>
+Aplicatia utilizeaza modelul de arbore la nivelul de scripturi HTML cu functionalizati oferite de .css si .js la nivel de font-end.
+La nivel de back-end utilizam procesarea anumitor informatii la nivel de baza de date spre a eficientiza analiza informatiilor si a scade nivelul
+de delay. Pentru procesarea statistica am ales Python fiindca compilatorul acestuia se dovedeste a fi cel mai rapid in acest sens.
+</p>
+<h4>5.2 Cereri de siguranta</h4>
+<p>
+Aplicatia utilizeaza client-server bazat pe protocolul TCP/IP care asigura integritatea datelor procesate si ce trebuie transmise.
+</p>
+<h4>5.3 Cereri de securitate</h4>
+<p>
+Aplicatia utilizeaza la nivel de securitate a transmiterii datelor criptarea RSA. 
+</p>
+<h4>5.4 Atribute de calitate Software</h4>
+<p>
+Aplicatia poate poate fi utilizata pe orice platforma utilizatorii doresc sa o foloseasca.
+</p>
+<h4>5.5 Reguli de afaceri</h4>
+<p>
+Aplicatia ofera servicii Web si functionalitati la nivel de .php,.py si .sql.
+</p>
+<h3>6. Alte cerinte</h3>
+<hr>
+<p>
+    Aplicatia ar putea avea un server proxy aditional care sa legalizeze la nivel international anumite cereri primite de la utilizatori.
+    Deasemenea ar putea sa asigure o criptare Stream cu generatori pseudo-randomi pe chei de 2^96 biti.
+    </p>
+    <h4>6.1 Appendix A: Glossary</h4>
+<p>
+Aplicatia nu are astfel de termeni necunoscuti.
+</p>
+<h4>6.2 Appendix B: Analysis Models</h4>
+<p>
+<img src="image.png" alt="">
+</p>
+<h4>6.2 Appendix C: To Be Determined List</h4>
+<p>
+<ul>
+<li>Data transfer between the scripts the app uses has to be determined.</li>
+<li>The user has to be determined about what he wants to see.</li>
+<li>The developers need to be determined in order to make the connections work.</li>
+
+</ul>
+</p>
+</body>
+
+
+
+
+</html>
