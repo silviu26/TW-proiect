@@ -8,8 +8,8 @@
 <h4>1.1 Scop</h4>
 <p>
 Scopul este de a crea o aplicatie ce ofera utilizatorilor un tool de vizualizare multi-criteriala a datelor despre diverse spatii auto 
-de parcare. Aplicatia va oferi totodata si suport pentru procesare statistica a datelor la nivel de back-end si le va transmite 
-utilizatorilor in functie de preferintele acestora.
+de parcare. Aplicatia va oferi totodata si suport pentru procesare statistica a datelor, reprezentarea datelor cartografice si exportarea acestora la nivel de 
+back-end si le va transmite utilizatorilor in functie de preferintele acestora.
 </p>
 <h4>1.2 Conventii de Document</h4>
 <p>
@@ -17,12 +17,13 @@ In cadrul acestui document am utilizat tagul h3 pentru titlurile capitolelor,h4 
 </p>
 <h4>1.3 Publicul vizat și sugestii de lectură</h4>
 <p>
-Aceasta aplicatie se adreseaza pesoanelor care doresc sa obtina informatii si date procesate statistic despre parcuri auto.
+Aceasta aplicatie se adreseaza pesoanelor care doresc sa obtina informatii si date procesate statistic despre parcuri auto,cum ar fi 
+dezvoltatori, manageri de proiect, personal de marketing, utilizatori, testeri și scriitori de documentație.
 </p>
 <h4>1.4 Scopul produsului</h4>
 <p>
-Aplicatia dezolvata are rolul de a oferi informatii generoase despre parcurile auto din Romania si date statistice care pot ajuta utilizatorii
-sa-si formeze o imagine asupra anumitor astfel de parcuri care le-ar putea crea conditii favorabile. 
+Aplicatia dezvoltata are rolul de a oferi informatii generoase despre parcurile auto din Romania si date statistice care pot ajuta utilizatorii
+sa-si formeze o imagine asupra anumitor astfel de parcuri care poseda anumite caracteristici.
 </p>
 <h4>1.5 Referinte</h4>
 <p>
@@ -30,7 +31,7 @@ sa-si formeze o imagine asupra anumitor astfel de parcuri care le-ar putea crea 
     <li>https://github.com/rick4470/IEEE-SRS-Tempate#11-purpose</li>
     <li>https://w3c.github.io/scholarly-html/</li>
     <li>https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html</li>
-
+    <li>https://data.gov.ro/dataset/parc-auto-romania</li>
 </ol>
 </p>
 <h3>2. Descriere Generala</h3>
@@ -41,8 +42,9 @@ Produsul reprezinta un proiect realizat de doi studenti de la Facultatea de Info
 </p>
 <h4>2.2 Functiile produsului</h4>
 <p>
-Produsul ofera reprezentari grafice si rezultate procesate statistic despre date stocate in baza de date a aplicatiei despre parcurile auto
-din Romania, informatii despre realizarea aplicatiei,date de contact catre administratorii aplicatiei,si date despre aplicatia in sine.
+Produsul ofera reprezentari grafice si rezultate procesate statistic , reprezentarea datelor cartografice si exportarea acestor date stocate in baza de 
+date a aplicatiei despre parcurile auto din Romania, informatii despre realizarea aplicatiei, date de contact catre administratorii aplicatiei,si date 
+despre aplicatia in sine.
 </p>
 <h4>2.3 Clase de utilizatori si caracteristici</h4>
 <p>
@@ -60,8 +62,10 @@ va spori considerabil "delay-ul" informatiilor ce trebuie obtinute de la serveru
 <h4>2.6 Documentația utilizatorului</h4>
 <p>
 Aplicatia pune la dispozitie o pagina dedicata problemelor legate de difunctionalitati ale aplicatie vizavi de utilizatorii sai, pe care acestia
-o pot folosi pentru a contacta administratorii aplicatiei pentru problemele pe care le confrunta.
-</p>
+o pot folosi pentru a contacta administratorii aplicatiei pentru problemele pe care le confrunta. Pentru a genera date statistice si cartografice,
+utilizatorul trebuie sa intre pe pagina "explore". In acel moment i se va cere un cont pentru conectare si pentru a a beneficia de serviciile oferite de pagina.
+Acolo poate selecta criteriile puse la dispozitie iar pentru a genera statisticile trebuie sa apese pe butonul "submit".Daca utilizatorul doreste sa descarce
+aceste statistici o poate face apasand butonul "export". Daca acesta doreste sa se delogheze poate apasa butonul "logout".</p>
 <h4>2.7 Ipoteze și dependențe</h4>
 <p>
 Aplicatia s-ar putea sa nu sincronizeze la timpul dorit cererile numeroase ale clientilor pentru a le putea oferi datele dorite. Astfel legaturile
@@ -109,11 +113,11 @@ si pentru transmiterea informatiilor la nivel de server intre script-uri.
     <h4>4.1 Caracteristicile sistemului de procesare statistica</h4>
 <p>
 Aplicatia utilizeaza in acest sens un script in Python care va procesa statistic datele primite de la baza de date a acesteia, folosind functiile
-predefinite oferite de acest mediu. 
+predefinite oferite de acest mediu de lucru. 
 </p>
 <h4>4.2 Caracteristicile sistemului de analiza a datelor de la utilizator</h4>
 <p>
-Aplicatia utilizeaza in acest sens un script in Php care analizeaza cererile transmise de utilizatori sub forma de stringuri si le pharse-aza
+Aplicatia utilizeaza in acest sens un script in PHP care analizeaza cererile transmise de utilizatori sub forma de stringuri si le pharse-eaza
 pentru a analiza cererile mai departe.
 </p>
 <h3>5. Alte cerinte non-functionale</h3>
@@ -126,11 +130,11 @@ de delay. Pentru procesarea statistica am ales Python fiindca compilatorul acest
 </p>
 <h4>5.2 Cereri de siguranta</h4>
 <p>
-Aplicatia utilizeaza client-server bazat pe protocolul TCP/IP care asigura integritatea datelor procesate si ce trebuie transmise.
+Aplicatia utilizeaza modelul client-server bazat pe protocolul TCP/IP care asigura integritatea datelor procesate si ce trebuie transmise.
 </p>
 <h4>5.3 Cereri de securitate</h4>
 <p>
-Aplicatia utilizeaza la nivel de securitate a transmiterii datelor criptarea RSA. 
+Aplicatia utilizeaza codificarea binara a caracterelor ASCII a parolelor introduse de clienti.
 </p>
 <h4>5.4 Atribute de calitate Software</h4>
 <p>
@@ -146,20 +150,21 @@ Aplicatia ofera servicii Web si functionalitati la nivel de .php,.py si .sql.
     Aplicatia ar putea avea un server proxy aditional care sa legalizeze la nivel international anumite cereri primite de la utilizatori.
     Deasemenea ar putea sa asigure o criptare Stream cu generatori pseudo-randomi pe chei de 2^96 biti.
     </p>
-    <h4>6.1 Appendix A: Glossary</h4>
+    <h4>6.1 Appendix A: Glossar</h4>
 <p>
 Aplicatia nu are astfel de termeni necunoscuti.
 </p>
-<h4>6.2 Appendix B: Analysis Models</h4>
+<h4>6.2 Appendix B: Modele de Analiza</h4>
 <p>
 <img src="image.png" alt="">
+<img src="image22.png" alt="">
 </p>
-<h4>6.2 Appendix C: To Be Determined List</h4>
+<h4>6.2 Appendix C: Lista sa fie determinata</h4>
 <p>
 <ul>
 <li>Data transfer between the scripts the app uses has to be determined.</li>
 <li>The user has to be determined about what he wants to see.</li>
-<li>The developers need to be determined in order to make the connections work.</li>
+<li>The developer has to be determined in order to make the connections work.</li>
 
 </ul>
 </p>
