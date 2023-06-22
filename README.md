@@ -11,4 +11,4 @@ Instalare
 
 Pentru a intra in aplicatia noastra trebuie ca toate fisierele din src sa fie intr-un singur folder (continutul din api, static si views intr-un singur folder).
 
-Link catre videoclip si documentatie: [https://we.tl/t-X6duylkQMP](url)
+Link catre videoclip si documentatie: [https://we.tl/t-X6duylkQMP](url) 
