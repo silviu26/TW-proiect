@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Apa</title>
@@ -7,14 +6,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <link rel="icon" href="Logo.png" />
     <link rel="stylesheet" href="Explore.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-
   <body>
     <video autoplay muted loop plays-inline class="backvideo">
       <source
@@ -76,6 +72,7 @@
       </div>
       <div class="sectionMainPage">
         <div class="infoCenter1">
+          <div id="resultContainer"></div>
           <p class="textC">
             Here Y are!!!! Now select the filters about what You'd like to get
             informed about and hope to have a pleasent experience!!!!
@@ -87,137 +84,147 @@
           />
         </div>
         <div class="parteastanga">
-          <div class="selector_judet">
-            <div class="select-btn0">
-              <span>Select Judet</span>
-              <i class="fa fa-arrow-down orice" aria-hidden="true"></i>
+          <form action="server.php" method="POST">
+            <div class="selector_judet">
+              <div class="select-btn0">
+                <span>Select County</span>
+                <i class="fa fa-arrow-down orice" aria-hidden="true"></i>
+              </div>
+              <div class="content">
+                <ul class="options">
+                  <li>
+                    Alba
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Bucuresti
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Iasi <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Timis
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="content">
-              <ul class="options">
-                <li>
-                  Brasov
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Bucuresti
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Iasi
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Timis
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="selector_categorie_nationala">
-            <div class="select-btn1">
-              <span>Select Categorie nationala</span>
-              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            <div class="selector_categorie_nationala">
+              <div class="select-btn1">
+                <span>Select National category</span>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+              </div>
+              <div class="content">
+                <ul class="options">
+                  <li>
+                    AUTOBUZ
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    AUTOMOBIL
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="content">
-              <ul class="options">
-                <li>
-                  AUTOBUZ
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  AUTOMOBIL
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="selector_categorie_comunitara">
-            <div class="select-btn2">
-              <span>Select Categorie comunitara</span>
-              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            <div class="selector_categorie_comunitara">
+              <div class="select-btn2">
+                <span>Select Community category</span>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+              </div>
+              <div class="content">
+                <ul class="options">
+                  <li>
+                    M2 <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    M3 <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    N1 <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="content">
-              <ul class="options">
-                <li>
-                  M2
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  M3
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  N1
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="selector_marca">
-            <div class="select-btn3">
-              <span>Select Marca</span>
-              <i class="fa fa-arrow-down orice" aria-hidden="true"></i>
+            <div class="selector_marca">
+              <div class="select-btn3">
+                <span>Select Brand</span>
+                <i class="fa fa-arrow-down orice" aria-hidden="true"></i>
+              </div>
+              <div class="content">
+                <ul class="options">
+                  <li>
+                    Setra
+                    <i
+                      class="fa fa-check-square-o bifa1"
+                      aria-hidden="true"
+                    ></i>
+                  </li>
+                  <li>
+                    Sor <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Temsa
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Tezeller
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Toyota
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Turkkar
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Volvo
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Volkswagen
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Aro <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Autobianchi
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Barkas
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    Citroen
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="content">
-              <ul class="options">
-                <li>
-                  Setra
-                  <i class="fa fa-check-square-o bifa1" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Sor
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Temsa
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Tezeller
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Toyota
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Turkkar
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Volvo
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Volkswagen
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Aro
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Autobianchi
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Barkas
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-                <li>
-                  Citroen
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                </li>
-              </ul>
+
+            <div class="b">
+              <button class="button" id="submitBtn" type="submit">
+                Submit
+              </button>
             </div>
-          </div>
+          </form>
+          <button class="button" id="exportButton">Export</button>
+
+          <a class="button" href="login/logout.php">Logout</a>
         </div>
       </div>
     </div>
     <script src="helpselector.js"></script>
     <script src="helppage.js"></script>
+    <script src="export.js"></script>
+    <script src="login/script.js"></script>
   </body>
 </html>
