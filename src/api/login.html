@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authentication</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <video autoplay muted loop plays-inline class="backvideo foreground-video">
+      <source
+        src="../vecteezy_the-movement-of-cars-on-a-parking-lot-timelapse_1623435.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div class="center-container">
+      <div class="container">
+        <div id="loginForm">
+          <h2>Authentication</h2>
+          <form>
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+            />
+
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+
+            <button type="button" onclick="login()">Login</button>
+            <p>
+              Don't have an account?
+              <a href="#" onclick="toggleForm()">Register</a>
+            </p>
+          </form>
+        </div>
+
+        <div id="signupForm" style="display: none">
+          <h2>Registration</h2>
+          <form>
+            <label for="newUsername">Username:</label>
+            <input
+              type="text"
+              id="newUsername"
+              placeholder="Choose a username"
+            />
+
+            <label for="newPassword">Password:</label>
+            <input
+              type="password"
+              id="newPassword"
+              placeholder="Choose a password"
+            />
+
+            <button type="button" onclick="signup()">Register</button>
+            <p>
+              Already have an account?
+              <a href="#" onclick="toggleForm()">Login</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
